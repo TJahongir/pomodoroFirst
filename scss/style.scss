@@ -1,0 +1,225 @@
+@import 'utilities';
+
+.body {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        text-transform: uppercase;
+        font-size: 1.8rem;
+    }
+
+    .settings {
+        font-size: 1.2rem;
+    }
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    margin: 0 auto;
+
+
+    .countdown {
+        position: relative;
+        height: 340px;
+        width: 340px;
+
+        .outline,.moving-outline, .time-display{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        
+
+        .outline,.moving-outline {
+            transform:translate(-50%,-50%) rotate(-90deg);
+        }
+
+
+        p {
+            font-size: 5.5rem;
+        }
+    }
+
+    .buttons {
+        margin: 3rem 0 5rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+
+.settings {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    background-color: white;
+    color: $primary-color;
+    padding: 2rem 4rem;
+    transition: all 600ms ease-in-out;
+
+    &-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+
+
+        p {
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    }
+
+    &-select {
+
+        .settings-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem 0 1rem;
+        }
+        
+        
+    }
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+        transition: all 600ms ease-in-out;
+
+        div {
+            padding: 2rem 0;
+            display: grid;
+            grid-template-columns: 4fr 1fr;
+            font-size: 1.5rem;
+
+            input {
+                border: none;
+                border-bottom: 3px solid lighten($primary-color, 20%);
+                padding: 2px 8px;
+                outline: none;
+                font-family: "Montserrat";
+                font-size: 1.2rem;
+                transition: all ease-out 600ms;
+                color: $primary-color;
+
+                &:focus {
+                    border-bottom: 3px solid $primary-color;
+                }
+            }
+
+        }
+    }
+
+}
+
+.footer {
+    text-align: center;
+}
+
+@media (max-width : 700px) {
+    body {
+        height: 100vh;
+        overflow: hidden;
+
+        .nav {
+            justify-content: space-between;
+            align-items: center;
+        
+            .logo {
+                text-transform: uppercase;
+                font-size: 1.2rem;
+            }
+        
+            .settings-header {
+                font-size: 1.2rem;
+                span {
+                    display: none;
+                }
+            }
+        }
+
+        .main {
+            justify-content: center;
+            width: 320px;
+            height: 100%;
+            margin-top: 2rem;
+        
+        
+            .countdown {
+                height: 320px;
+                width: 320px;
+                p {
+                    font-size: 5.5rem;
+                }
+            }
+        
+            .buttons {
+                margin: 3.5rem 0 3rem;
+            }
+
+        }
+
+        .settings {
+            width: 100%;
+            padding: 1rem 2.5rem;
+
+            .settings-buttons {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                margin: 1rem 0 1rem;
+
+                button {
+                    display: block;
+                    width: 80%;
+                    margin: 0 auto;
+
+                    &:nth-child(2) {
+                        margin: 1rem auto;
+                    }
+                }
+            }
+
+            &-form {
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 0.5rem 0;
+                    margin-bottom: 0;
+
+                    input {
+                        margin-top: 0.2rem;
+                    }
+                }
+            }
+                
+        }
+    }
+}

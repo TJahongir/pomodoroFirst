@@ -1,0 +1,119 @@
+$primary-color: #ff6565;
+$paused-color: #82CDFF;
+$break-color: #30b355;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+// Background
+.primaryBg {
+    background-color: $primary-color;
+}
+
+.blueBg {
+    background-color: $paused-color;
+}
+
+.greenBg {
+    background-color: $break-color;
+}
+
+// Add Later
+
+/* .hoverPrimary {
+    &:hover {
+        background-color: #fff;
+        color: $primary-color;
+    }
+}
+
+
+.hoverGreen {
+    &:hover {
+        background-color: #fff;
+        color: $break-color;
+    }
+}
+ */
+.btn {
+    font-family: 'Open Sans', sans-serif;
+    padding: 0.5rem;
+    background: none;
+    font-weight: bold;
+    border-radius: 7px;
+    transition: all 200ms ease-in;
+    font-size: 1.5rem;
+    cursor: pointer;
+    outline: none;
+    width: 150px;
+    text-align: center;
+
+}
+
+.btnWhite {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btnPrimary {
+    border: 2px solid $primary-color;
+    color: $primary-color;
+/* 
+    &:hover {
+        background: $primary-color;
+        color: #fff;
+    } */
+}
+
+.btn.noHover {
+    cursor: not-allowed;
+/*     &:hover {
+        pointer-events: none;
+        background: #eb5c5c;
+        border-color: rgb(228, 228, 228);
+        color: rgb(228, 228, 228);
+    }
+ */
+}
+
+
+.activeBtn {
+    border: 2px solid $primary-color;
+    background: $primary-color;
+    color: #fff !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.line {
+    width: 90%;
+    height: 2px;
+    margin: 0.5rem auto;
+    background-color: #fff;
+    text-align: center;
+}
+
+@mixin flex-center ($center: center){
+    display: flex;
+    justify-content: $center;
+    align-items: $center;
+    text-align: $center;
+}
+
+// Nav
+.hide-set {
+    transform: translateX(100%);
+}
+.show-set {
+    transform: translateX(0);
+}
